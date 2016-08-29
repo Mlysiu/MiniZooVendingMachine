@@ -1,25 +1,24 @@
 package com.mlysiu.temp.service
 
-import org.specs2.mutable.Specification
-import spray.testkit.Specs2RouteTest
-
+import org.scalatest.{Matchers, WordSpec}
+import spray.http.StatusCodes._
 import spray.http._
-import StatusCodes._
+import spray.testkit.ScalatestRouteTest
 
-class MyServiceTest extends Specification with Specs2RouteTest with MyService {
+class MyServiceTest extends WordSpec with ScalatestRouteTest with MyService with Matchers {
   def actorRefFactory = system
 
   "MyService" should {
 
     "return a greeting for GET requests to the root path" in {
       Get("/somePath") ~> myRoute ~> check {
-        responseAs[String] must contain("Say hello")
+        responseAs[String] should include("Say hello")
       }
     }
 
     "leave GET requests to other paths unhandled" in {
       Get("/kermit") ~> myRoute ~> check {
-        handled must beFalse
+        handled shouldBe false
       }
     }
 

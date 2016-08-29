@@ -1,8 +1,8 @@
-name := "SprayRestAkkaTemplate"
+name := "MiniZooVendingMachine"
 
 version := "1.0"
 
-scalaVersion := "2.11.6"
+scalaVersion := "2.11.8"
 
 organization := "com.mlysiu"
 
@@ -17,6 +17,6 @@ libraryDependencies ++= {
     "io.spray" %% "spray-testkit" % sprayV % "test",
     "com.typesafe.akka" %% "akka-actor" % akkaV,
     "com.typesafe.akka" %% "akka-testkit" % akkaV % "test",
-    "org.specs2" %% "specs2-core" % "2.3.11" % "test"
+    "org.scalatest" %% "scalatest" % "3.0.0" % "test"
   )
 }
