@@ -1,4 +1,4 @@
-name := "MiniZooVendingMachine"
+name := "VendingMachine"
 
 version := "1.0"
 
