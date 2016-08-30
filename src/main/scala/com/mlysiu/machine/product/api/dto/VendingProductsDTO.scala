@@ -7,15 +7,14 @@ import spray.json.DefaultJsonProtocol._
 
 import scala.language.implicitConversions
 
-case class VendingProductsDTO(currentStorage: List[VendingProductDTO])
+case class VendingProductsDTO(currentStorage: Set[VendingProductDTO])
 
 object VendingProductsDTO {
   implicit val productsFormat = jsonFormat1(VendingProductsDTO.apply)
 
   implicit def products2ProductsDto(prodList: ProductsList): VendingProductsDTO =
-    VendingProductsDTO(prodList.products.map {
-      case (prd: VendingProduct, quantity: Int) => VendingProductDTO(prd.name, prd.price, quantity)
-    }.toList)
+    VendingProductsDTO(prodList.products.map(prd => VendingProductDTO(prd.name, prd.price, prd.quantity)
+    ))
 }
 
 
