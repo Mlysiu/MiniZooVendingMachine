@@ -4,7 +4,7 @@ In order to launch the Vending Machine one has to:
 
 1. Run it from Intellij (this is the most simple way)
 
-2. Build it using ```sbt clean assembly``` and then run with ```java -jar <name_of_the_assembled_jar>```
+2. Clone it from github, build it using ```sbt clean assembly``` and then run with ```java -jar <name_of_the_assembled_jar>```
 
 I have assumed that I'm trying to create a set of endpoints that may work with some kind of frontend UI/real machine. At current state it is putting out two endpoints to operate with.
 
@@ -46,4 +46,5 @@ List of improvements:
 * Error handling
 * Transactions in terms of buying a new product
 * More operations that would model a Vending Machine in a better way
+* Make it more resilient as listing products should be available even when buying is broken.
 
