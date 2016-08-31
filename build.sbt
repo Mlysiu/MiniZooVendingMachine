@@ -15,9 +15,10 @@ libraryDependencies ++= {
     "io.spray" %% "spray-can" % sprayV,
     "io.spray" %% "spray-routing" % sprayV,
     "io.spray" %% "spray-json" % "1.3.2",
-    "io.spray" %% "spray-testkit" % sprayV % "test",
     "com.typesafe.akka" %% "akka-actor" % akkaV,
+    "org.scalaz" %% "scalaz-core" % "7.2.5",
     "com.typesafe.akka" %% "akka-testkit" % akkaV % "test",
-    "org.scalatest" %% "scalatest" % "3.0.0" % "test"
+    "org.scalatest" %% "scalatest" % "3.0.0" % "test",
+    "io.spray" %% "spray-testkit" % sprayV % "test"
   )
 }
